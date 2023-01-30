@@ -34,7 +34,7 @@ def BFS(problem, repeat_check=False): # returns a solution node or failure
     reach_set = set() # initialize the reached set to contain node
     reach_set.add(Locate)
     while not Frontier_queue.is_empty(): # while frontier is not empty
-        tempQueue = Frontier_queue.pop() # node <- a leaf node rezmoved from frontier
+        tempQueue = Frontier_queue.pop() # node <- a leaf node removed from frontier
         if problem.is_goal(tempQueue.loc): # if node contains a goal state of problem then return node
             return tempQueue
         templist = tempQueue.expand(problem) # expand node
@@ -47,4 +47,4 @@ def BFS(problem, repeat_check=False): # returns a solution node or failure
                 Frontier_queue.add(node) #add child to frontier Queue
                 if (node not in reach_set): # if child is in the reached set
                     reach_set.add(node) #add child to reach set 
-    return None # return failure 
+    return None # return failure
